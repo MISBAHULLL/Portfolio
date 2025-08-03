@@ -40,7 +40,7 @@ body {
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: 4rem;
     color: var(--text-color);
     font-weight: 800;
     cursor: pointer;
@@ -56,7 +56,7 @@ body {
 }
 
 .navbar a {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
@@ -74,4 +74,144 @@ body {
     display: none;
     font-size: 3.6rem;
     color: var(--main-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+.Beranda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+
+.Content-beranda {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    flex: 1;
+}
+
+span {
+    color: var(--main-color);
+    text-shadow: 0 0 25px var(--main-color);
+}
+
+.logo span {
+    color: var(--main-color);
+    text-shadow: 0 0 25px var(--main-color);
+}
+
+.Content-beranda h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+
+.Content-beranda h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+.Gambar-beranda {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.Gambar-beranda img {
+    position: relative;
+    top: 3rem;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+    object-fit: cover;
+}
+
+.Gambar-beranda img:hover {
+    box-shadow: 0 0 20px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+
+.Content-beranda p {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+
+.Sosial-icon {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0 3rem 0;
+}
+
+.Sosial-icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    transition: 0.3s ease-in-out;
+}
+
+.Sosial-icon a:hover {
+    color: var(--text-color);
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 20px var(--main-color);
+    background-color: var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.Grup-tombol {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.Grup-tombol a:nth-of-type(2) {
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+
+.Grup-tombol a:nth-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
 }
