@@ -181,6 +181,7 @@ span {
     max-width: 1000px; /* Maksimal lebar */
     opacity: 0.9; /* Sedikit transparan */
     margin: 2rem 0; /* Margin atas bawah */
+    text-align: justify; /* Rata kiri-kanan */
 }
 
 /* ===== SOCIAL ICONS CONTAINER ===== */
@@ -245,21 +246,48 @@ span {
     gap: 1.5rem; /* Jarak antar button */
 }
 
-/* ===== SECONDARY BUTTON (OUTLINE STYLE) ===== */
-.Grup-tombol a:nth-of-type(2) {
-    background-color: black; /* Background hitam */
-    color: var(--main-color); /* Teks ungu */
-    border: 2px solid var(--main-color); /* Border ungu */
-    box-shadow: 0 0 25px transparent; /* No shadow */
+/* Secondary Button Base Style */
+.btn-secondary {
+    background: black !important; /* Background hitam solid */
+    background-image: none !important; /* Hapus gradient dari .btn */
+    color: var(--main-color) !important; /* Teks ungu */
+    border: 2px solid var(--main-color) !important; /* Border ungu */
+    box-shadow: 0 0 25px transparent !important; /* No shadow */
 }
 
 /* Secondary Button Hover Effect */
-.Grup-tombol a:nth-of-type(2):hover {
-    box-shadow: 0 0 25px var(--main-color); /* Shadow muncul */
-    background-color: var(--main-color); /* Background jadi ungu */
-    color: white; /* Teks jadi hitam */
+.btn-secondary:hover {
+    background-color: var(--main-color) !important; /* Background jadi ungu */
+    color: white !important; /* Teks putih */
+    box-shadow: 0 0 25px var(--main-color) !important; /* Shadow muncul */
 }
 
+/* Button Active State - harus setelah hover */
+.btn:active {
+    transform: translateY(0px) scale(0.95); /* Reset posisi + scale down */
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.6); /* Shadow lebih kecil */
+}
+/* Primary Button Active State */
+.btn-primary:active {
+    background: white !important; /* Background putih solid */
+    background-image: none !important; /* Hapus gradient */
+    color: var(--main-color) !important; /* Teks ungu saat ditekan */
+    border: 2px solid var(--main-color) !important;
+    box-shadow: 0 0 25px var(--main-color) !important; /* Shadow tetap */
+    transform: scale(0.95) !important; /* Sedikit mengecil saat ditekan */
+    transition: none !important;
+}
+
+/* Secondary Button Active State */
+.btn-secondary:active {
+    background: white !important; /* Background putih solid */
+    background-image: none !important; /* Hapus gradient */
+    color: var(--main-color) !important; /* Teks ungu saat ditekan */
+    border: 2px solid var(--main-color) !important;
+    box-shadow: inset 0 0 10px rgba(139, 92, 246, 0.3) !important; /* Inner shadow */
+    transform: scale(0.95) !important;
+    transition: none !important;
+}
 /* ===== ANIMATIONS & KEYFRAMES ===== */
 /* Animasi fade in dari bawah */
 @keyframes fadeInUp {
@@ -283,7 +311,6 @@ span {
     }
 }
 
-/* ===== ANIMATION APPLICATIONS ===== */
 /* Animasi untuk konten beranda */
 .Content-beranda {
     animation: fadeInUp 1s ease-out;
@@ -305,7 +332,6 @@ span {
 .Sosial-icon a:nth-child(3) { --i: 3; }
 .Sosial-icon a:nth-child(4) { --i: 4; }
 
-/* ===== BACKGROUND EFFECTS ===== */
 /* Efek partikel background dengan gradient radial */
 body::before {
     content: '';
@@ -322,7 +348,6 @@ body::before {
     z-index: -1; /* Di belakang semua elemen */
 }
 
-/* ===== ADDITIONAL EFFECTS ===== */
 /* Efek glow pada nama di title */
 .Content-beranda h1  {
     animation: float 3s ease-in-out infinite; /* Animasi float terus menerus */
