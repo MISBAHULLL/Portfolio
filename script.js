@@ -119,6 +119,13 @@ function initScrollReveal() {
         item.style.animationPlayState = 'paused';
         observer.observe(item);
     });
+    
+    // Observe footer items
+    const footerItems = document.querySelectorAll('.footer-section, .footer-bottom');
+    footerItems.forEach(item => {
+        item.style.animationPlayState = 'paused';
+        observer.observe(item);
+    });
 }
 
 // Contact Form Handler
