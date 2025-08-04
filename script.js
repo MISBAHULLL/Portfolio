@@ -84,8 +84,32 @@ function initThemeSelector() {
     });
 }
 
+// Scroll Reveal Animation
+function initScrollReveal() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => {
+        item.style.animationPlayState = 'paused';
+        observer.observe(item);
+    });
+}
+
 // Mulai animasi setelah DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
     initThemeSelector();
+    initScrollReveal();
 });

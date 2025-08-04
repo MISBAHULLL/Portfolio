@@ -73,6 +73,7 @@ body {
 /* ===== NAVIGATION LINKS ===== */
 .navbar a {
     font-size: 2.8rem;
+    top: 33;
     color: var(--text-color);
     margin-left: 7rem; /* Jarak antar link */
     font-weight: 500;
@@ -218,7 +219,7 @@ span {
 /* ===== BUTTON BASE STYLING ===== */
 .btn {
     display: inline-block;
-    padding: 1.2rem 3rem;
+    padding: 1.2rem rem;
     background: linear-gradient(45deg, var(--main-color), var(--main-color));
     border-radius: 4rem;
     font-size: 1.6rem;
@@ -442,7 +443,7 @@ body::before {
 /* ===== COLOR THEME SELECTOR ===== */
 .theme-selector {
     position: fixed;
-    top: 20px;
+    top: 33px;
     right: 20px;
     display: flex;
     gap: 10px;
@@ -507,3 +508,263 @@ body::before {
     51%, 100% { border-color: transparent; }
 }
 
+.heading1 {
+    font-size: 8rem;
+    align-items: center;
+    margin: 5rem 0;
+    text-align: center;
+}
+
+/* ===== TENTANG SAYA SECTION ===== */
+.Tentang_saya {
+    min-height: 100vh;
+    padding: 10rem 12% 2rem;
+    background: var(--second-bg-color);
+}
+
+.heading1 {
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, var(--text-color), var(--main-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.tech-section {
+    width: 100%;
+}
+
+.heading2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.tech-desc {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== TIMELINE STYLING ===== */
+.timeline-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.timeline-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.timeline-item:hover::before {
+    transform: translateX(100%);
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--main-color), var(--main-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 3rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Dynamic Icon Colors */
+[data-theme="purple"] .timeline-icon {
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="blue"] .timeline-icon {
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="green"] .timeline-icon {
+    background: linear-gradient(45deg, #10b981, #059669);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.1) rotate(360deg);
+}
+
+.timeline-content h4 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.timeline-content p {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .Tentang_saya {
+        padding: 8rem 8% 2rem;
+    }
+    
+    .timeline-items {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Tentang_saya {
+        padding: 6rem 5% 2rem;
+    }
+    
+    .heading1 {
+        font-size: 4rem;
+    }
+    
+    .heading2 {
+        font-size: 3rem;
+    }
+    
+    .content p {
+        font-size: 1.6rem;
+    }
+    
+    .tech-desc {
+        font-size: 1.4rem;
+    }
+    
+    .timeline-items {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .timeline-item {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .timeline-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+    
+    .timeline-content h4 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading1 {
+        font-size: 3.5rem;
+    }
+    
+    .heading2 {
+        font-size: 2.5rem;
+    }
+    
+    .timeline-item {
+        padding: 2rem 1rem;
+    }
+    
+    .timeline-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .timeline-content h4 {
+        font-size: 1.8rem;
+    }
+    
+    .timeline-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== ANIMATION EFFECTS ===== */
+.timeline-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+.timeline-item:nth-child(7) { animation-delay: 0.7s; }
+.timeline-item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
