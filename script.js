@@ -112,6 +112,53 @@ function initScrollReveal() {
         card.style.animationPlayState = 'paused';
         observer.observe(card);
     });
+    
+    // Observe contact items
+    const contactItems = document.querySelectorAll('.contact-item, .contact-social, .contact-form');
+    contactItems.forEach(item => {
+        item.style.animationPlayState = 'paused';
+        observer.observe(item);
+    });
+}
+
+// Contact Form Handler
+function initContactForm() {
+    const form = document.querySelector('.contact-form form');
+    const submitBtn = document.querySelector('.contact-btn');
+    
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Add loading state
+            submitBtn.classList.add('loading');
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.classList.remove('loading');
+                
+                // Show success message (you can customize this)
+                alert('Pesan berhasil dikirim! Terima kasih.');
+                
+                // Reset form
+                form.reset();
+            }, 2000);
+        });
+    }
+    
+    // Add focus effects to form inputs
+    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', () => {
+            if (!input.value) {
+                input.parentElement.classList.remove('focused');
+            }
+        });
+    });
 }
 
 // Mulai animasi setelah DOM loaded
@@ -119,4 +166,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
     initThemeSelector();
     initScrollReveal();
+    initContactForm();
 });
