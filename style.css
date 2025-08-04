@@ -18,6 +18,7 @@
     --second-bg-color: #131313; /* Warna background sekunder */
     --text-color: white; /* Warna teks utama */
     --main-color: #8b5cf6; /* Warna accent (ungu) */
+    --main-gradient: linear-gradient(135deg, var(--bg-color) 0%, #0a0a0a 50%, var(--second-bg-color) 100%)
 }
 
 /* ===== HTML BASE SETTINGS ===== */
@@ -363,57 +364,14 @@ body::before {
     position: relative;
 }
 
-.Animasi-Text span::before {
-    content: "Full Stack Developer";
+.Animasi-Text span {
     color: var(--main-color);
-    animation: words 20s linear infinite;
+    border-right: 2px solid var(--main-color);
+    animation: blink 1s infinite;
 }
 
-.Animasi-Text span::after {
-    content: "";
-    background: linear-gradient(135deg, var(--bg-color) 0%, #0a0a0a 50%, var(--second-bg-color) 100%);
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid var(--main-color);
-    right: -8px;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+@keyframes blink {
+    0%, 50% { border-color: var(--main-color); }
+    51%, 100% { border-color: transparent; }
 }
 
-@keyframes cursor {
-    to {
-        border-left: 2px solid var(--main-color);
-    }
-}
-
-@keyframes words {
-    0%,
-    20% {
-        content: "Front End Developer";
-    }
-    21%,
-    40% {
-        content: "Back End Developer";
-    }
-    41%,
-    60% {
-        content: "UI/UX Designer";
-    }
-    61%,
-    80% {
-        content: "Data Analyst"; 
-    }
-    81%,
-    100% {
-        content: "Full Stack Developer";
-    }
-}
-
-@keyframes typing {
-    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
-        width: 0;
-    }
-    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
-        width: calc(100% + 8px);
-    }
-}
