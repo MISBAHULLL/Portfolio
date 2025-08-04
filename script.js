@@ -105,6 +105,13 @@ function initScrollReveal() {
         item.style.animationPlayState = 'paused';
         observer.observe(item);
     });
+    
+    // Observe project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.style.animationPlayState = 'paused';
+        observer.observe(card);
+    });
 }
 
 // Mulai animasi setelah DOM loaded

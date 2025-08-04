@@ -789,3 +789,298 @@ body::before {
         transform: translateY(0);
     }
 }
+/* ===== PROJECTS SECTION ===== */
+.projects {
+    min-height: 100vh;
+    padding: 10rem 12% 5rem;
+    background: var(--bg-color);
+}
+
+.projects-desc {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+/* ===== PROJECT CARD STYLING ===== */
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.3s; }
+.project-card:nth-child(3) { animation-delay: 0.5s; }
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== PROJECT IMAGE STYLING ===== */
+.project-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+/* ===== PROJECT OVERLAY ===== */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.project-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Dynamic Project Button Colors */
+[data-theme="purple"] .project-btn {
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+[data-theme="blue"] .project-btn {
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+[data-theme="green"] .project-btn {
+    background: linear-gradient(45deg, #10b981, #059669);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.project-btn:hover {
+    transform: scale(1.1) rotate(360deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== PROJECT CONTENT ===== */
+.project-content {
+    padding: 2.5rem;
+}
+
+.project-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.project-content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+/* ===== PROJECT TECH STACK ===== */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    color: var(--main-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+    background: var(--main-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.tech-item i {
+    font-size: 1.4rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .projects {
+        padding: 8rem 8% 4rem;
+    }
+    
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 6rem 5% 3rem;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .project-content {
+        padding: 2rem;
+    }
+    
+    .project-content h3 {
+        font-size: 2rem;
+    }
+    
+    .project-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-desc {
+        font-size: 1.4rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .project-content p {
+        font-size: 1.3rem;
+    }
+    
+    .tech-item {
+        font-size: 1.1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* ===== ADVANCED ANIMATIONS ===== */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.project-card:nth-child(odd) {
+    animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.project-card:nth-child(even) {
+    animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+/* ===== SHIMMER EFFECT ===== */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+/* ===== FLOATING ANIMATION FOR TECH ITEMS ===== */
+.tech-item {
+    animation: float 3s ease-in-out infinite;
+}
+
+.tech-item:nth-child(1) { animation-delay: 0s; }
+.tech-item:nth-child(2) { animation-delay: 0.5s; }
+.tech-item:nth-child(3) { animation-delay: 1s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
