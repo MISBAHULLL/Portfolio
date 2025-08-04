@@ -168,10 +168,41 @@ function initContactForm() {
     });
 }
 
+// Mobile Menu Toggle
+function initMobileMenu() {
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.navbar a');
+    
+    if (menuIcon && navbar) {
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        });
+        
+        // Close menu when clicking nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                menuIcon.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
+                navbar.classList.remove('active');
+                menuIcon.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Mulai animasi setelah DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
     initThemeSelector();
     initScrollReveal();
     initContactForm();
+    initMobileMenu();
 });

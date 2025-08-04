@@ -1674,7 +1674,7 @@ body::before {
     opacity: 0;
     transform: translateY(30px);
 }
-
+http://127.0.0.1:3000/index.html#Beranda
 .footer-section:nth-child(1) { animation-delay: 0.1s; }
 .footer-section:nth-child(2) { animation-delay: 0.3s; }
 .footer-section:nth-child(3) { animation-delay: 0.5s; }
@@ -1996,4 +1996,101 @@ body::before {
     font-weight: 500;
     margin: 0;
     padding: 1rem 0;
+}
+/* ===== MOBILE MENU STYLING ===== */
+#menu-icon {
+    display: none;
+    font-size: 3.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#menu-icon:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+    
+    .navbar {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        border-top: 2px solid var(--main-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+    }
+    
+    .navbar.active {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navbar a {
+        display: block;
+        font-size: 2.4rem;
+        margin: 0;
+        padding: 2rem 5%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .navbar a:hover,
+    .navbar a.active {
+        background: var(--main-color);
+        color: white;
+        border-bottom-color: transparent;
+        transform: translateX(10px);
+    }
+    
+    .navbar a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Menu Icon Animation */
+#menu-icon.active {
+    transform: rotate(90deg);
+}
+
+/* Header adjustment for mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem 5%;
+    }
+    
+    .logo {
+        font-size: 3rem;
+    }
+}
+/* ===== THEME SELECTOR MOBILE ADJUSTMENT ===== */
+@media (max-width: 768px) {
+    .theme-selector {
+        right: 70px !important;
+        top: 25px !important;
+    }
+}
+/* ===== THEME SELECTOR MOBILE SIZE ===== */
+@media (max-width: 768px) {
+    .theme-selector {
+        padding: 6px !important;
+        gap: 6px !important;
+    }
+    
+    .theme-btn {
+        width: 20px !important;
+        height: 20px !important;
+    }
 }
