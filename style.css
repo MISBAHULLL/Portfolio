@@ -74,7 +74,7 @@ body {
 .navbar a {
     font-size: 2.8rem;
     color: var(--text-color);
-    margin-left: 4rem; /* Jarak antar link */
+    margin-left: 7rem; /* Jarak antar link */
     font-weight: 500;
     transition: color 0.3s ease; /* Animasi perubahan warna */
     border-bottom: 3px solid transparent; /* Border bawah tersembunyi */
@@ -155,8 +155,8 @@ span {
 .Gambar-beranda img {
     position: relative;
     top: 3rem; /* Posisi sedikit ke bawah */
-    width: 25vw; /* 25% dari viewport width */
-    height: 25vw; /* Tinggi sama dengan lebar */
+    width: 20vw; /* 25% dari viewport width */
+    height: 20vw; /* Tinggi sama dengan lebar */
     border-radius: 50%; /* Bentuk bulat */
     box-shadow: 0 0 25px var(--main-color); /* Shadow ungu */
     cursor: pointer;
@@ -218,26 +218,53 @@ span {
 /* ===== BUTTON BASE STYLING ===== */
 .btn {
     display: inline-block;
-    padding: 1.2rem 3rem; /* Padding dalam button */
-    background: linear-gradient(45deg, var(--main-color), #a855f7); /* Gradient background */
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5); /* Shadow glow */
-    border-radius: 4rem; /* Border melengkung */
+    padding: 1.2rem 3rem;
+    background: linear-gradient(45deg, var(--main-color), var(--main-color));
+    border-radius: 4rem;
     font-size: 1.6rem;
-    color: white; /* Teks putih */
+    color: white;
     border: 2px solid transparent;
-    letter-spacing: 0.1rem; /* Jarak antar huruf */
-    font-weight: 600; /* Font semi-bold */
-    transition: all 0.3s ease-in-out; /* Animasi smooth */
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
     position: relative;
     overflow: hidden;
 }
 
+/* Dynamic Button Shadows */
+[data-theme="purple"] .btn {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+    background: linear-gradient(45deg, var(--main-color), #a855f7);
+}
+
+[data-theme="blue"] .btn {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+    background: linear-gradient(45deg, var(--main-color), #1d4ed8);
+}
+
+[data-theme="green"] .btn {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+    background: linear-gradient(45deg, var(--main-color), #059669);
+}
+
 /* Button Hover Effect */
-.btn:hover {
-    transform: translateY(-3px); /* Naik sedikit */
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4); /* Shadow lebih besar */
-    background: linear-gradient(45deg, #a855f7, var(--main-color)); /* Gradient terbalik */
+[data-theme="purple"] .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(45deg, #a855f7, var(--main-color));
+}
+
+[data-theme="blue"] .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(45deg, #1d4ed8, var(--main-color));
+}
+
+[data-theme="green"] .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+    background: linear-gradient(45deg, #059669, var(--main-color));
 }
 
 /* ===== BUTTON GROUP CONTAINER ===== */
@@ -263,10 +290,20 @@ span {
     box-shadow: 0 0 25px var(--main-color) !important; /* Shadow muncul */
 }
 
-/* Button Active State - harus setelah hover */
-.btn:active {
-    transform: translateY(0px) scale(0.95); /* Reset posisi + scale down */
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.6); /* Shadow lebih kecil */
+/* Button Active State - Dynamic Shadows */
+[data-theme="purple"] .btn:active {
+    transform: translateY(0px) scale(0.95);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.6);
+}
+
+[data-theme="blue"] .btn:active {
+    transform: translateY(0px) scale(0.95);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.6);
+}
+
+[data-theme="green"] .btn:active {
+    transform: translateY(0px) scale(0.95);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.6);
 }
 /* Primary Button Active State */
 .btn-primary:active {
@@ -279,13 +316,33 @@ span {
     transition: none !important;
 }
 
-/* Secondary Button Active State */
-.btn-secondary:active {
-    background: white !important; /* Background putih solid */
-    background-image: none !important; /* Hapus gradient */
-    color: var(--main-color) !important; /* Teks ungu saat ditekan */
+/* Secondary Button Active State - Dynamic */
+[data-theme="purple"] .btn-secondary:active {
+    background: white !important;
+    background-image: none !important;
+    color: var(--main-color) !important;
     border: 2px solid var(--main-color) !important;
-    box-shadow: inset 0 0 10px rgba(139, 92, 246, 0.3) !important; /* Inner shadow */
+    box-shadow: inset 0 0 10px rgba(139, 92, 246, 0.3) !important;
+    transform: scale(0.95) !important;
+    transition: none !important;
+}
+
+[data-theme="blue"] .btn-secondary:active {
+    background: white !important;
+    background-image: none !important;
+    color: var(--main-color) !important;
+    border: 2px solid var(--main-color) !important;
+    box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.3) !important;
+    transform: scale(0.95) !important;
+    transition: none !important;
+}
+
+[data-theme="green"] .btn-secondary:active {
+    background: white !important;
+    background-image: none !important;
+    color: var(--main-color) !important;
+    border: 2px solid var(--main-color) !important;
+    box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.3) !important;
     transform: scale(0.95) !important;
     transition: none !important;
 }
@@ -333,7 +390,28 @@ span {
 .Sosial-icon a:nth-child(3) { --i: 3; }
 .Sosial-icon a:nth-child(4) { --i: 4; }
 
-/* Efek partikel background dengan gradient radial */
+/* Efek partikel background dengan gradient radial - Dynamic Theme */
+[data-theme="purple"] body::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+}
+
+[data-theme="blue"] body::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+}
+
+[data-theme="green"] body::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+}
+
 body::before {
     content: '';
     position: fixed;
@@ -341,12 +419,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
-    pointer-events: none; /* Tidak menghalangi interaksi */
-    z-index: -1; /* Di belakang semua elemen */
+    pointer-events: none;
+    z-index: -1;
+    transition: all 0.3s ease;
 }
 
 /* Efek glow pada nama di title */
@@ -364,6 +439,63 @@ body::before {
     position: relative;
 }
 
+/* ===== COLOR THEME SELECTOR ===== */
+.theme-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.theme-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.theme-btn.active {
+    border-color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Theme Colors */
+.theme-purple { background: linear-gradient(45deg, #8b5cf6, #a855f7); }
+.theme-blue { background: linear-gradient(45deg, #3b82f6, #1d4ed8); }
+.theme-green { background: linear-gradient(45deg, #10b981, #059669); }
+
+/* Color Variables for Themes */
+:root {
+    --main-color: #8b5cf6;
+}
+
+[data-theme="purple"] {
+    --main-color: #8b5cf6;
+}
+
+[data-theme="blue"] {
+    --main-color: #3b82f6;
+}
+
+[data-theme="green"] {
+    --main-color: #10b981;
+}
+
+/* Animation Text Styling */
 .Animasi-Text span {
     color: var(--main-color);
     border-right: 2px solid var(--main-color);

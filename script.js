@@ -49,7 +49,43 @@ function typeWriter() {
     }
 }
 
+// Theme Selector Functionality
+function initThemeSelector() {
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const body = document.body;
+    
+    themeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            themeButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Change theme
+            const theme = button.getAttribute('data-theme');
+            body.setAttribute('data-theme', theme);
+            
+            // Save theme preference
+            localStorage.setItem('selectedTheme', theme);
+        });
+    });
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('selectedTheme') || 'purple';
+    body.setAttribute('data-theme', savedTheme);
+    
+    // Set active button
+    themeButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-theme') === savedTheme) {
+            btn.classList.add('active');
+        }
+    });
+}
+
 // Mulai animasi setelah DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
+    initThemeSelector();
 });
