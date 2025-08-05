@@ -1,4 +1,4 @@
-/* ===== RESET CSS ===== */
+/* RESET CSS*/
 /* Menghapus default styling browser dan mengatur base styling */
 * {
     margin: 0;
@@ -11,29 +11,28 @@
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
 }
 
-/* ===== CSS VARIABLES ===== */
-/* Warna utama website untuk konsistensi */
+/* CSS VARIABLES */
 :root {
-    --bg-color: #080808; /* Warna background utama (hitam gelap) */
-    --second-bg-color: #131313; /* Warna background sekunder */
-    --text-color: white; /* Warna teks utama */
-    --main-color: #8b5cf6; /* Warna accent (ungu) */
+    --bg-color: #080808; 
+    --second-bg-color: #131313; 
+    --text-color: white;
+    --main-color: #8b5cf6; 
     --main-gradient: linear-gradient(135deg, var(--bg-color) 0%, #0a0a0a 50%, var(--second-bg-color) 100%)
 }
 
-/* ===== HTML BASE SETTINGS ===== */
+/* HTML BASE SETTINGS */
 html {
     font-size: 60%; /* Base font size untuk rem calculations */
     overflow-x: hidden; /* Mencegah horizontal scroll */
 }
 
-/* ===== BODY STYLING ===== */
+/* BODY STYLING */
 body {
     background: linear-gradient(135deg, var(--bg-color) 0%, #0a0a0a 50%, var(--second-bg-color) 100%);  /*var(--bg-color);  Background gelap */
-    color: var(--text-color); /* Teks putih */
+    color: var(--text-color); 
 }
 
-/* ===== HEADER NAVIGATION ===== */
+/* HEADER NAVIGATION */
 .header {
     position: fixed; /* Header tetap di atas saat scroll */
     top: 0;
@@ -51,18 +50,18 @@ body {
     z-index: 5; /* Di atas elemen lain */
 }
 
-/* ===== LOGO STYLING ===== */
+/* LOGO STYLING*/
 .logo {
-    font-size: 4rem; /* Ukuran font besar */
+    font-size: 4rem; 
     color: var(--text-color);
-    font-weight: 800; /* Font tebal */
+    font-weight: 800; 
     cursor: pointer;
-    transition: all 0.3s ease; /* Animasi smooth */
+    transition: all 0.3s ease; 
 }
 
 /* Logo Hover Effect */
 .logo:hover {
-    transform: scale(1.1); /* Membesar saat hover */
+    transform: scale(1.1); 
 }
 
 /* Logo Accent Text */
@@ -70,12 +69,12 @@ body {
     text-shadow: 0 0 25px var(--main-color); /* Efek glow ungu */
 }
 
-/* ===== NAVIGATION LINKS ===== */
+/* NAVIGATION LINKS */
 .navbar a {
     font-size: 2.8rem;
     top: 33;
     color: var(--text-color);
-    margin-left: 7rem; /* Jarak antar link */
+    margin-left: 7rem; 
     font-weight: 500;
     transition: color 0.3s ease; /* Animasi perubahan warna */
     border-bottom: 3px solid transparent; /* Border bawah tersembunyi */
@@ -84,82 +83,82 @@ body {
 /* Navigation Hover & Active State */
 .navbar a:hover,
 .navbar a.active {
-    color: var(--main-color); /* Warna ungu saat hover/active */
-    border-bottom: 3px solid var(--main-color); /* Border bawah ungu */
+    color: var(--main-color); 
+    border-bottom: 3px solid var(--main-color); 
 }
 
-/* ===== MOBILE MENU ICON ===== */
+/* MOBILE MENU ICON */
 /* Hidden by default, akan muncul di responsive */
 #menu-icon {
-    display: none; /* Tersembunyi di desktop */
+    display: none; 
     font-size: 3.6rem;
     color: var(--main-color);
 }
 
-/* ===== SECTION BASE STYLING ===== */
+/* SECTION BASE STYLING */
 section {
     min-height: 100vh; /* Minimal tinggi satu layar */
-    padding: 10rem 12% 10rem; /* Padding atas-samping-bawah */
+    padding: 10rem 12% 10rem; 
 }
 
-/* ===== HOME SECTION LAYOUT ===== */
+/* HOME SECTION LAYOUT */
 .Beranda {
     display: flex;
-    justify-content: space-between; /* Konten kiri, gambar kanan */
-    align-items: center; /* Vertikal center */
-    gap: 5rem; /* Jarak antara konten dan gambar */
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 5rem; 
 }
 
-/* ===== HOME CONTENT CONTAINER ===== */
+/* HOME CONTENT CONTAINER */
 .Content-beranda {
     display: flex;
-    flex-direction: column; /* Susun vertikal */
-    align-items: baseline; /* Align kiri */
+    flex-direction: column; 
+    align-items: baseline; 
     text-align: left;
     justify-content: center;
     flex: 1; /* Ambil ruang tersisa */
 }
 
-/* ===== GLOBAL SPAN STYLING ===== */
+/* GLOBAL SPAN STYLING */
 /* Untuk semua teks accent (highlight) */
 span {
-    color: var(--main-color); /* Warna ungu */
-    text-shadow: 0 0 25px var(--main-color); /* Efek glow */
+    color: var(--main-color); 
+    text-shadow: 0 0 25px var(--main-color); 
 }
 
-/* ===== SUBTITLE STYLING ===== */
+/* SUBTITLE STYLING */
 .Content-beranda h3 {
     margin-bottom: 2rem;
     margin-top: 1rem;
     font-size: 3.5rem; /* Ukuran sedang */
 }
 
-/* ===== MAIN TITLE WITH GRADIENT ===== */
+/* MAIN TITLE WITH GRADIENT */
 .Content-beranda h1 {
-    font-size: 7rem; /* Ukuran besar */
-    font-weight: 700; /* Sangat tebal */
+    font-size: 7rem; 
+    font-weight: 700; 
     margin-top: 1.5rem;
-    line-height: 1; /* Line height rapat */
-    background: linear-gradient(45deg, var(--text-color), var(--main-color)); /* Gradient putih ke ungu */
+    line-height: 1; 
+    background: linear-gradient(45deg, var(--text-color), var(--main-color)); 
     -webkit-background-clip: text; /* Clip gradient ke teks */
     -webkit-text-fill-color: transparent; /* Teks transparan */
     background-clip: text;
 }
 
-/* ===== PROFILE IMAGE CONTAINER ===== */
+/* PROFILE IMAGE CONTAINER */
 .Gambar-beranda {
     border-radius: 50%; /* Bentuk bulat */
     aspect-ratio: 1/1; /* Rasio 1:1 (persegi) */
 }
 
-/* ===== PROFILE IMAGE STYLING ===== */
+/* PROFILE IMAGE STYLING */
 .Gambar-beranda img {
     position: relative;
-    top: 3rem; /* Posisi sedikit ke bawah */
+    top: 3rem; 
     width: 20vw; /* 25% dari viewport width */
     height: 20vw; /* Tinggi sama dengan lebar */
-    border-radius: 50%; /* Bentuk bulat */
-    box-shadow: 0 0 25px var(--main-color); /* Shadow ungu */
+    border-radius: 50%; 
+    box-shadow: 0 0 25px var(--main-color); 
     cursor: pointer;
     transition: all 0.4s ease-in-out; /* Animasi smooth */
     object-fit: cover; /* Crop gambar proporsional */
@@ -175,48 +174,48 @@ span {
     border: 3px solid var(--main-color); /* Border solid */
 }
 
-/* ===== DESCRIPTION TEXT ===== */
+/* DESCRIPTION TEXT */
 .Content-beranda p {
     font-size: 3rem;
-    font-weight: 400; /* Normal weight */
-    line-height: 1.8; /* Jarak baris nyaman dibaca */
-    max-width: 1000px; /* Maksimal lebar */
+    font-weight: 400; 
+    line-height: 1.8; 
+    max-width: 1000px; 
     opacity: 0.9; /* Sedikit transparan */
-    margin: 2rem 0; /* Margin atas bawah */
-    text-align: justify; /* Rata kiri-kanan */
+    margin: 2rem 0; 
+    text-align: justify; 
 }
 
-/* ===== SOCIAL ICONS CONTAINER ===== */
+/* SOCIAL ICONS CONTAINER */
 .Sosial-icon {
     display: flex;
     gap: 1.5rem; /* Jarak antar icon */
     margin: 2rem 0 3rem 0; /* Margin atas dan bawah */
 }
 
-/* ===== INDIVIDUAL SOCIAL ICON ===== */
+/* INDIVIDUAL SOCIAL ICON */
 .Sosial-icon a {
     display: inline-flex;
-    justify-content: center; /* Center horizontal */
-    align-items: center; /* Center vertical */
-    width: 4.5rem; /* Lebar kotak */
-    height: 4.5rem; /* Tinggi kotak */
-    background: transparent; /* Background transparan */
-    border: 2px solid var(--main-color); /* Border ungu */
-    font-size: 2.5rem; /* Ukuran icon */
-    border-radius: 50%; /* Bentuk bulat */
-    color: var(--main-color); /* Warna icon ungu */
-    transition: 0.3s ease-in-out; /* Animasi smooth */
+    justify-content: center; 
+    align-items: center;
+    width: 4.5rem; 
+    height: 4.5rem; 
+    background: transparent; 
+    border: 2px solid var(--main-color); 
+    font-size: 2.5rem; 
+    border-radius: 50%; 
+    color: var(--main-color); 
+    transition: 0.3s ease-in-out; 
 }
 
 /* Social Icon Hover Effect */
 .Sosial-icon a:hover {
-    color: var(--text-color); /* Icon jadi putih */
+    color: var(--text-color); 
     transform: scale(1.3) translateY(-5px); /* Membesar dan naik */
     box-shadow: 0 0 20px var(--main-color); /* Shadow glow */
     background-color: var(--main-color); /* Background jadi ungu */
 }
 
-/* ===== BUTTON BASE STYLING ===== */
+/* BUTTON BASE STYLING */
 .btn {
     display: inline-block;
     padding: 1.2rem 3rem;
@@ -278,7 +277,7 @@ span {
     background: linear-gradient(45deg, #059669, #10b981) !important;
 }
 
-/* ===== BUTTON GROUP CONTAINER ===== */
+/*BUTTON GROUP CONTAINER */
 .Grup-tombol {
     display: flex;
     align-items: center;
@@ -368,7 +367,7 @@ span {
     transform: scale(0.95) !important;
     transition: none !important;
 }
-/* ===== ANIMATIONS & KEYFRAMES ===== */
+/* ANIMATIONS & KEYFRAMES */
 /* Animasi fade in dari bawah */
 @keyframes fadeInUp {
     from {
@@ -461,7 +460,7 @@ body::before {
     position: relative;
 }
 
-/* ===== COLOR THEME SELECTOR ===== */
+/* COLOR THEME SELECTOR */
 .theme-selector {
     position: fixed;
     top: 33px;
@@ -536,7 +535,7 @@ body::before {
     text-align: center;
 }
 
-/* ===== TENTANG SAYA SECTION ===== */
+/* TENTANG SAYA SECTION */
 .Tentang_saya {
     min-height: 100vh;
     padding: 10rem 12% 2rem;
@@ -595,7 +594,7 @@ body::before {
     margin-right: auto;
 }
 
-/* ===== TIMELINE STYLING ===== */
+/* TIMELINE STYLING */
 .timeline-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -686,7 +685,7 @@ body::before {
     font-weight: 500;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
     .Tentang_saya {
         padding: 8rem 8% 2rem;
@@ -767,7 +766,7 @@ body::before {
     }
 }
 
-/* ===== ANIMATION EFFECTS ===== */
+/* ANIMATION EFFECTS */
 .timeline-item {
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
@@ -789,7 +788,7 @@ body::before {
         transform: translateY(0);
     }
 }
-/* ===== PROJECTS SECTION ===== */
+/* PROJECTS SECTION */
 .projects {
     min-height: 100vh;
     padding: 10rem 12% 5rem;
@@ -813,7 +812,7 @@ body::before {
     margin-top: 4rem;
 }
 
-/* ===== PROJECT CARD STYLING ===== */
+/* PROJECT CARD STYLING */
 .project-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -837,7 +836,7 @@ body::before {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== PROJECT IMAGE STYLING ===== */
+/* PROJECT IMAGE STYLING */
 .project-image {
     position: relative;
     height: 250px;
@@ -855,7 +854,7 @@ body::before {
     transform: scale(1.1);
 }
 
-/* ===== PROJECT OVERLAY ===== */
+/* PROJECT OVERLAY */
 .project-overlay {
     position: absolute;
     top: 0;
@@ -914,7 +913,7 @@ body::before {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== PROJECT CONTENT ===== */
+/* PROJECT CONTENT */
 .project-content {
     padding: 2.5rem;
 }
@@ -933,7 +932,7 @@ body::before {
     margin-bottom: 2rem;
 }
 
-/* ===== PROJECT TECH STACK ===== */
+/* PROJECT TECH STACK */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -963,7 +962,7 @@ body::before {
     font-size: 1.4rem;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
     .projects {
         padding: 8rem 8% 4rem;
@@ -1023,7 +1022,7 @@ body::before {
     }
 }
 
-/* ===== ADVANCED ANIMATIONS ===== */
+/* ADVANCED ANIMATIONS */
 @keyframes slideInFromLeft {
     from {
         opacity: 0;
@@ -1054,7 +1053,7 @@ body::before {
     animation: slideInFromRight 0.6s ease-out forwards;
 }
 
-/* ===== SHIMMER EFFECT ===== */
+/* SHIMMER EFFECT */
 .project-card::before {
     content: '';
     position: absolute;
@@ -1071,7 +1070,7 @@ body::before {
     left: 100%;
 }
 
-/* ===== FLOATING ANIMATION FOR TECH ITEMS ===== */
+/* FLOATING ANIMATION FOR TECH ITEMS */
 .tech-item {
     animation: float 3s ease-in-out infinite;
 }
@@ -1084,7 +1083,7 @@ body::before {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
 }
-/* ===== CONTACT SECTION ===== */
+/* CONTACT SECTION */
 .contact {
     min-height: 100vh;
     padding: 10rem 12% 5rem;
@@ -1108,7 +1107,7 @@ body::before {
     align-items: start;
 }
 
-/* ===== CONTACT INFO ===== */
+/* CONTACT INFO */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -1186,7 +1185,7 @@ body::before {
     color: var(--main-color);
 }
 
-/* ===== SOCIAL LINKS ===== */
+/* SOCIAL LINKS */
 .contact-social {
     padding: 2rem;
     background: rgba(255, 255, 255, 0.05);
@@ -1231,7 +1230,7 @@ body::before {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== CONTACT FORM ===== */
+/* CONTACT FORM */
 .contact-form {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -1306,7 +1305,7 @@ body::before {
     transform: translateX(5px);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
     .contact {
         padding: 8rem 8% 4rem;
@@ -1382,7 +1381,7 @@ body::before {
     }
 }
 
-/* ===== ANIMATIONS ===== */
+/* ANIMATIONS */
 @keyframes fadeInLeft {
     to {
         opacity: 1;
@@ -1397,7 +1396,7 @@ body::before {
     }
 }
 
-/* ===== FORM VALIDATION STYLES ===== */
+/* FORM VALIDATION STYLES */
 .form-group input:valid,
 .form-group textarea:valid {
     border-color: #10b981;
@@ -1408,7 +1407,7 @@ body::before {
     border-color: #ef4444;
 }
 
-/* ===== LOADING ANIMATION FOR BUTTON ===== */
+/* LOADING ANIMATION FOR BUTTON */
 .contact-btn.loading {
     pointer-events: none;
 }
@@ -1431,7 +1430,7 @@ body::before {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
-/* ===== CONTACT BUTTON IMPROVEMENTS ===== */
+/* CONTACT BUTTON IMPROVEMENTS */
 .contact-btn {
     font-size: 1.7rem !important;
     font-weight: 600 !important;
@@ -1455,7 +1454,7 @@ body::before {
     align-items: center;
     transition: transform 0.s ease;
 }
-/* ===== FOOTER SECTION ===== */
+/* FOOTER SECTION */
 .footer {
     background: var(--bg-color);
     padding: 5rem 12% 2rem;
@@ -1495,7 +1494,7 @@ body::before {
     margin-bottom: 2rem;
 }
 
-/* ===== FOOTER SOCIAL LINKS ===== */
+/* FOOTER SOCIAL LINKS */
 .footer-social {
     display: flex;
     gap: 1rem;
@@ -1523,7 +1522,7 @@ body::before {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== FOOTER LINKS ===== */
+/* FOOTER LINKS */
 .footer-links {
     list-style: none;
 }
@@ -1563,7 +1562,7 @@ body::before {
     width: 10px;
 }
 
-/* ===== FOOTER CONTACT ===== */
+/* FOOTER CONTACT */
 .footer-contact p {
     display: flex;
     align-items: center;
@@ -1578,7 +1577,7 @@ body::before {
     width: 20px;
 }
 
-/* ===== FOOTER BOTTOM ===== */
+/* FOOTER BOTTOM */
 .footer-divider {
     width: 100%;
     height: 1px;
@@ -1596,7 +1595,7 @@ body::before {
     color: var(--text-color);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
     .footer {
         padding: 4rem 8% 2rem;
@@ -1668,7 +1667,7 @@ body::before {
     }
 }
 
-/* ===== FOOTER ANIMATIONS ===== */
+/* FOOTER ANIMATIONS */
 .footer-section {
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
@@ -1684,7 +1683,7 @@ http://127.0.0.1:3000/index.html#Beranda
     opacity: 0;
     transform: translateY(30px);
 }
-/* ===== MODERN FOOTER IMPROVEMENTS ===== */
+/* MODERN FOOTER IMPROVEMENTS */
 .footer {
     background: linear-gradient(135deg, var(--bg-color) 0%, #0a0a0a 50%, var(--second-bg-color) 100%) !important;
     padding: 6rem 12% 3rem !important;
@@ -1810,7 +1809,7 @@ http://127.0.0.1:3000/index.html#Beranda
     font-weight: 500;
     opacity: 0.8 !important;
 }
-/* ===== FOOTER FLEXBOX LAYOUT ===== */
+/* FOOTER FLEXBOX LAYOUT */
 .footer-content {
     display: flex !important;
     justify-content: space-between;
@@ -1841,7 +1840,7 @@ http://127.0.0.1:3000/index.html#Beranda
         min-width: auto;
     }
 }
-/* ===== FOOTER SIMPLE LAYOUT ===== */
+/* FOOTER SIMPLE LAYOUT */
 .footer-content {
     display: block !important;
     margin-bottom: 3rem !important;
@@ -1865,7 +1864,7 @@ http://127.0.0.1:3000/index.html#Beranda
         margin-bottom: 3rem;
     }
 }
-/* ===== FOOTER SIMPLE STYLING ===== */
+/* FOOTER SIMPLE STYLING */
 .footer-section {
     background: none !important;
     backdrop-filter: none !important;
@@ -1884,7 +1883,7 @@ http://127.0.0.1:3000/index.html#Beranda
     border-color: transparent !important;
     box-shadow: none !important;
 }
-/* ===== FOOTER CLEAN LAYOUT ===== */
+/* FOOTER CLEAN LAYOUT */
 .footer {
     background: var(--second-bg-color) !important;
     padding: 4rem 12% 2rem !important;
@@ -1989,7 +1988,7 @@ http://127.0.0.1:3000/index.html#Beranda
         transform: translateX(-50%);
     }
 }
-/* ===== FOOTER COPYRIGHT ===== */
+/* FOOTER COPYRIGHT */
 .footer-bottom p {
     font-size: 1.4rem !important;
     opacity: 0.8 !important;
@@ -1997,7 +1996,7 @@ http://127.0.0.1:3000/index.html#Beranda
     margin: 0;
     padding: 1rem 0;
 }
-/* ===== MOBILE MENU STYLING ===== */
+/* MOBILE MENU STYLING */
 #menu-icon {
     display: none;
     font-size: 3.6rem;
@@ -2075,14 +2074,14 @@ http://127.0.0.1:3000/index.html#Beranda
         font-size: 3rem;
     }
 }
-/* ===== THEME SELECTOR MOBILE ADJUSTMENT ===== */
+/* THEME SELECTOR MOBILE ADJUSTMENT */
 @media (max-width: 768px) {
     .theme-selector {
         right: 70px !important;
         top: 25px !important;
     }
 }
-/* ===== THEME SELECTOR MOBILE SIZE ===== */
+/* THEME SELECTOR MOBILE SIZE */
 @media (max-width: 768px) {
     .theme-selector {
         padding: 6px !important;
@@ -2092,5 +2091,366 @@ http://127.0.0.1:3000/index.html#Beranda
     .theme-btn {
         width: 20px !important;
         height: 20px !important;
+    }
+}
+/* CONTACT SECTION IMPROVEMENTS */
+.contact-container {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5rem !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contact-form {
+    flex: 1.2;
+    max-width: 500px;
+}
+
+/* Remove social section from contact */
+.contact-social {
+    display: none !important;
+}
+
+/* FOOTER IMPROVEMENTS */
+.footer-content {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section:first-child {
+    flex: 1.5;
+}
+
+.footer-bottom {
+    text-align: center !important;
+    padding-top: 2rem;
+}
+
+.footer-divider {
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, var(--main-color), transparent) !important;
+    margin-bottom: 2rem !important;
+}
+
+.footer-bottom p {
+    font-size: 1.4rem !important;
+    opacity: 0.8 !important;
+    color: var(--text-color) !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column !important;
+        gap: 3rem !important;
+    }
+    
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 3rem !important;
+    }
+    
+    .footer-section {
+        flex: none;
+        min-width: auto;
+    }
+}
+/* PROFESSIONAL CONTACT SECTION */
+.contact {
+    min-height: 100vh;
+    padding: 8rem 12% 5rem !important;
+    background: linear-gradient(135deg, var(--second-bg-color) 0%, #0f0f0f 50%, var(--bg-color) 100%) !important;
+}
+
+.contact-desc {
+    font-size: 1.7rem !important;
+    text-align: center;
+    margin-bottom: 6rem !important;
+    opacity: 0.9 !important;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.contact-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6rem !important;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ENHANCED CONTACT INFO */
+.contact-info {
+    flex: 1;
+    max-width: 450px;
+}
+
+.contact-item {
+    display: flex !important;
+    align-items: center;
+    gap: 2.5rem !important;
+    padding: 2.5rem !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 2rem !important;
+    margin-bottom: 2rem;
+    transition: all 0.4s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.contact-item:hover::before {
+    left: 100%;
+}
+
+.contact-item:hover {
+    transform: translateY(-8px) !important;
+    border-color: var(--main-color) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.contact-icon {
+    width: 70px !important;
+    height: 70px !important;
+    background: linear-gradient(135deg, var(--main-color), var(--main-color)) !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem !important;
+    color: white;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.15) rotate(360deg) !important;
+    box-shadow: 0 15px 40px rgba(var(--main-color), 0.4) !important;
+}
+
+.contact-details h4 {
+    font-size: 2rem !important;
+    margin-bottom: 0.8rem !important;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.contact-details p {
+    font-size: 1.5rem !important;
+    opacity: 0.85 !important;
+    color: var(--main-color);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ENHANCED CONTACT FORM */
+.contact-form {
+    flex: 1.2;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 2.5rem !important;
+    padding: 4rem !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%, rgba(255, 255, 255, 0.02) 100%);
+    pointer-events: none;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 3rem !important;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1.8rem 1.8rem 1.8rem 5.5rem !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 2px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 1.5rem !important;
+    font-size: 1.5rem !important;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 400;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--main-color) !important;
+    box-shadow: 0 0 25px rgba(var(--main-color), 0.4) !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    transform: translateY(-2px);
+}
+
+.form-group i {
+    position: absolute;
+    left: 2rem !important;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.2rem !important;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.form-group textarea + i {
+    top: 2.5rem !important;
+    transform: none;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 2rem 3rem !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    margin-top: 2rem !important;
+    border-radius: 1.5rem !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 40px rgba(var(--main-color), 0.5) !important;
+}
+
+/* RESPONSIVE IMPROVEMENTS */
+@media (max-width: 1200px) {
+    .contact {
+        padding: 6rem 8% 4rem !important;
+    }
+    
+    .contact-container {
+        gap: 4rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 5rem 5% 3rem !important;
+    }
+    
+    .contact-container {
+        flex-direction: column !important;
+        gap: 4rem !important;
+        align-items: center;
+    }
+    
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .contact-form {
+        padding: 3rem !important;
+    }
+    
+    .contact-item {
+        padding: 2rem !important;
+        gap: 2rem !important;
+    }
+    
+    .contact-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 2.4rem !important;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 1.5rem 1.5rem 1.5rem 4.5rem !important;
+        font-size: 1.4rem !important;
+    }
+    
+    .form-group i {
+        left: 1.5rem !important;
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-desc {
+        font-size: 1.5rem !important;
+    }
+    
+    .contact-item {
+        padding: 1.8rem !important;
+        gap: 1.5rem !important;
+    }
+    
+    .contact-details h4 {
+        font-size: 1.7rem !important;
+    }
+    
+    .contact-details p {
+        font-size: 1.3rem !important;
+    }
+    
+    .contact-form {
+        padding: 2.5rem !important;
+        border-radius: 2rem !important;
+    }
+    
+    .contact-btn {
+        padding: 1.8rem 2.5rem !important;
+        font-size: 1.6rem !important;
     }
 }
