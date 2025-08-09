@@ -167,6 +167,8 @@ function initContactForm() {
         });
     });
 }
+// Initialize page loads
+document.addEventListener('DOMContentLoaded', initContactForm);
 
 // Mobile Menu Toggle
 function initMobileMenu() {
