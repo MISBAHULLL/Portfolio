@@ -1,10 +1,10 @@
 // Animasi Typing Text
 const texts = [
     "Frontend Developer",
-    "Backend Developer", 
     "UI/UX Designer",
     "Data Analyst",
-    "Full Stack Developer"
+    // "Backend Developer",
+    // "Full Stack Developer"
 ];
 
 let textIndex = 0;
